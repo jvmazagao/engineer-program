@@ -1,0 +1,6 @@
+# Per-engineer progress (names, 1:1 notes, scores) — keep private
+Cohort/
+.obsidian/workspace*.json
+.obsidian/cache
+.DS_Store
+__pycache__/

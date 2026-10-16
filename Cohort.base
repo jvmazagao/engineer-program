@@ -1,0 +1,138 @@
+filters:
+  and:
+    - file.inFolder("Cohort")
+    - type == "Submission"
+formulas:
+  overdue: 'if(state != "approved" && state != "submitted" && due < today(), "⚠️ overdue", "")'
+  days_left: 'if(state == "approved", "", ((date(due) - today()) / 86400000).round())'
+properties:
+  file.name:
+    displayName: Submission
+  assignment_id:
+    displayName: ID
+  engineer:
+    displayName: Engineer
+  phase:
+    displayName: Phase
+  due:
+    displayName: Due
+  state:
+    displayName: State
+  submitted:
+    displayName: Submitted
+  peer_reviewer:
+    displayName: Peer
+  score:
+    displayName: Score
+  formula.overdue:
+    displayName: Flag
+  formula.days_left:
+    displayName: Days left
+views:
+  - type: table
+    name: Review queue
+    filters:
+      and:
+        - state == "submitted"
+    order:
+      - engineer
+      - assignment_id
+      - file.name
+      - submitted
+      - peer_reviewer
+      - format
+    sort:
+      - property: submitted
+        direction: ASC
+  - type: table
+    name: Overdue
+    filters:
+      and:
+        - state != "approved"
+        - state != "submitted"
+        - due < today()
+    groupBy:
+      property: note.engineer
+      direction: ASC
+    order:
+      - assignment_id
+      - file.name
+      - due
+      - state
+    sort:
+      - property: due
+        direction: ASC
+  - type: table
+    name: Due in next 14 days
+    filters:
+      and:
+        - state != "approved"
+        - due >= today()
+        - due <= today() + "14d"
+    order:
+      - engineer
+      - assignment_id
+      - file.name
+      - due
+      - state
+    sort:
+      - property: due
+        direction: ASC
+  - type: table
+    name: Upcoming live sessions
+    filters:
+      and:
+        - format == "live"
+        - state != "approved"
+    order:
+      - engineer
+      - assignment_id
+      - file.name
+      - due
+    sort:
+      - property: due
+        direction: ASC
+  - type: table
+    name: By engineer
+    groupBy:
+      property: note.engineer
+      direction: ASC
+    order:
+      - assignment_id
+      - file.name
+      - due
+      - state
+      - score
+      - formula.overdue
+    sort:
+      - property: due
+        direction: ASC
+    summaries:
+      score: Average
+  - type: table
+    name: By assignment
+    groupBy:
+      property: note.assignment_id
+      direction: ASC
+    order:
+      - engineer
+      - state
+      - score
+      - submitted
+    summaries:
+      score: Average
+  - type: table
+    name: My work
+    filters:
+      and:
+        - file.inFolder(this.file.folder + "/Submissions")
+    order:
+      - assignment_id
+      - file.name
+      - due
+      - state
+      - score
+      - formula.overdue
+    sort:
+      - property: due
+        direction: ASC

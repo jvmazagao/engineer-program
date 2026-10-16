@@ -1,0 +1,58 @@
+filters:
+  and:
+    - file.inFolder("Assignments")
+    - type == "Assignment"
+properties:
+  id:
+    displayName: ID
+  file.name:
+    displayName: Assignment
+  phase:
+    displayName: Phase
+  due_week:
+    displayName: Due week
+  format:
+    displayName: Format
+  effort:
+    displayName: Effort
+  review:
+    displayName: Review
+views:
+  - type: table
+    name: By phase
+    groupBy:
+      property: note.phase
+      direction: ASC
+    order:
+      - id
+      - file.name
+      - due_week
+      - format
+      - effort
+      - review
+    sort:
+      - property: due_week
+        direction: ASC
+  - type: table
+    name: Live sessions
+    filters:
+      and:
+        - format == "live"
+    order:
+      - id
+      - file.name
+      - due_week
+      - effort
+    sort:
+      - property: due_week
+        direction: ASC
+  - type: cards
+    name: Cards
+    order:
+      - file.name
+      - description
+      - due_week
+      - format
+    sort:
+      - property: due_week
+        direction: ASC
