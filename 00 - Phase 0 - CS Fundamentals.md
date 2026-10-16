@@ -80,7 +80,7 @@ Graded deliverables for this phase. Each engineer has a matching submission note
 - [ ] O(1), O(log n), O(n), O(n log n), O(n²), O(2ⁿ); best/average/worst; space complexity
 - [ ] Amortized cost (why `list.append` is O(1))
 - 🧪 Time the same task at n = 10³, 10⁴, 10⁵ with O(n) vs O(n²) code and plot it
-- 📖 Revisit [[Time Complexity]]
+- 📖 [Big-O Cheat Sheet](https://www.bigocheatsheet.com/): complexity of common structures and sorts
 
 📝 Notes: `Big-O`, `Amortized Analysis`
 
@@ -106,7 +106,7 @@ Graded deliverables for this phase. Each engineer has a matching submission note
 ### Week 5 — Linked lists, stacks, queues
 - [ ] Singly/doubly linked lists; stack (LIFO); queue/deque (FIFO)
 - 🧪 Implement linked list, stack, queue from scratch
-- 🧪 NeetCode: Stack + Linked List (8 problems), and revisit [[Valid Parentheses]]
+- 🧪 NeetCode: Stack + Linked List (8 problems), and solve [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
 
 📝 Notes: `Linked List`, `Stack`, `Queue`, `Pattern - Monotonic Stack`
 
@@ -122,7 +122,7 @@ Graded deliverables for this phase. Each engineer has a matching submission note
 - [ ] Runestone ch. 6: bubble/insertion (why O(n²)), merge sort, quicksort, why O(n log n) is the lower bound for comparison sorts
 - [ ] Stability; counting/bucket sort; what your language's `sort` uses (Timsort/pdqsort)
 - 🧪 Implement merge sort and quicksort with tests
-- 📖 Revisit [[H-Index]]
+- 🧪 Solve [H-Index](https://leetcode.com/problems/h-index/)
 
 📝 Notes: `Merge Sort`, `Quicksort`, `Divide and Conquer`
 
@@ -153,7 +153,7 @@ Graded deliverables for this phase. Each engineer has a matching submission note
 📝 Notes: `Heap`, `Pattern - Top K`, `Trie`
 
 ### Week 11 — Graphs
-- [ ] Representations: adjacency list vs matrix. Revisit [[Algoritimos/Grafos/Teoria|Grafos — Teoria]]
+- [ ] Representations: adjacency list vs matrix. See them animated in [VisuAlgo — Graph Structures](https://visualgo.net/en/graphds)
 - [ ] BFS (shortest path, unweighted), DFS, cycle detection, topological sort, Dijkstra (concept + implementation)
 - [ ] Real-world mapping: dependency graphs, workflow DAGs, service call graphs
 - 🧪 NeetCode: Graphs (8 problems); implement topological sort for a fake build system
