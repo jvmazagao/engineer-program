@@ -4,3 +4,4 @@ Cohort/
 .obsidian/cache
 .DS_Store
 __pycache__/
+*.log

@@ -76,3 +76,7 @@ Every assignment card has the same shape: why it matters, a brief, tasks, accept
 ## Adapting it
 
 The content is stack- and company-agnostic. Before running it with a team, map Phase 6 to your company's career ladder, swap the "at work" assignments to fit your systems, and adjust the pacing to the time your engineers actually have.
+
+## License
+
+The program content is licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE). You can share and adapt it for any purpose, including commercially, as long as you give appropriate credit and link back to this repository.
